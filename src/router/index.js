@@ -1,13 +1,24 @@
 const routes = [
   {
     path: "/",
-    // component : import("..pages/index.vue")
-    component: import("@/pages/index.vue"),
-  },
-  {
-    path: "/test",
-    // component : import("..pages/index.vue")
-    component: import("@/pages/test.vue"),
+    component: import("@/layouts/default.vue"),
+    children: [
+      {
+        path: "/",
+        // component : import("..pages/index.vue")
+        component: import("@/pages/index.vue"),
+      },
+      {
+        path: "/test",
+        // component : import("..pages/index.vue")
+        component: import("@/pages/test.vue"),
+      },
+      {
+        path: "/sample",
+        // component : import("..pages/index.vue")
+        component: import("@/pages/sample.vue"),
+      },
+    ],
   },
 ];
 
