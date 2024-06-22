@@ -1,6 +1,6 @@
 <template>
-  
   <div>
+    <Test />
     <h1>Hello Test Application</h1>
 
     <h2>nbfvdcsxh</h2>
@@ -10,6 +10,15 @@
   </div>
 </template>
 
-<script></script>
+<script>
+
+import Test from "@/pages/test.vue";
+export default {
+  
+  components: {
+    Test,
+  },
+};
+</script>
 
 <style></style>

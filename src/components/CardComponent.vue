@@ -1,7 +1,16 @@
 <template>
   <div class="pa-4">
+
+    
     <v-row>
-      <v-col lg="4" cols="12" v-for="item in cardarray" :key="item">
+      <v-col
+        lg="4"
+        cols="12"
+        md="6"
+        sm="6"
+        v-for="item in cardarray"
+        :key="item"
+      >
         <v-sheet color="#D9D9D9">
           <v-img src="@/assets/images/ss2 1.png"></v-img>
           {{ item.key1 }}
@@ -22,21 +31,16 @@
 export default {
   data() {
     return {
-      cardarray: [
-        {
-          key1: 1,
-          key2: 2,
-        },
-        {
-          key1: 3,
-          key2: 4,
-        },
-        {
-          key1: 5,
-          key2: 6,
-        },
-      ],
+      cardarray: [],
     };
+  },
+
+  props: {
+    cardArray: Array,
+  },
+
+  created() {
+    this.cardarray = this.cardArray;
   },
 };
 </script>

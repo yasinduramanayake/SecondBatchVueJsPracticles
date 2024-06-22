@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <Index /> -->
-
+    <!-- <HelloWorld /> -->
     <!-- <button @click="navigate()">Route</button> -->
     <center>
       <v-card width="400px" height="400px" elevation="8">
@@ -23,7 +23,7 @@
       <!-- grid view -->
       <v-container>
         <v-row>
-          <v-col lg="3" cols="12" >
+          <v-col lg="3" cols="12">
             <v-sheet color="red" elevation="20">hello</v-sheet>
           </v-col>
           <v-col lg="3" cols="12">
@@ -37,21 +37,15 @@
           </v-col>
         </v-row>
       </v-container>
-
-
-
-
     </center>
   </div>
 </template>
 
 <script>
-import Index from "@/pages/index.vue";
+
 
 export default {
-  components: {
-    Index,
-  },
+
 
   beforeCreate() {
     console.log("beforecreate");

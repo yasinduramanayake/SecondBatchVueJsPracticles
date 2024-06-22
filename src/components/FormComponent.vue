@@ -1,4 +1,6 @@
 <template>
+  <h2 class="text-center">{{ message }}</h2>
+  <br /><br />
   <div class="form_header">
     <!-- <v-btn @click="showForm()">Show Form</v-btn> -->
     <v-card class="form_width" elevation="5">
@@ -51,7 +53,6 @@
         </v-form>
       </div>
       <div class="pa-4" v-else-if="showform === true">No Result</div>
-      
     </v-card>
     <v-dialog v-model="show" max-width="500">
       <v-card title="Dialog">
@@ -84,10 +85,12 @@ export default {
     };
   },
 
+  props: {
+    message: String,
+    propform: Object,
+  },
   created() {
-    this.form.name = "test";
-    this.form.address = "test";
-    this.form.inquiry = "test";
+    this.form = this.propform;
   },
 
   methods: {
