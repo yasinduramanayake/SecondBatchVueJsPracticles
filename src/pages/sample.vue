@@ -6,14 +6,18 @@
   <div class="mt-10"></div>
   <div class="mt-10"></div>
   <!-- card component -->
-  <div><CardComponent  :cardArray="cardarray"/></div>
+  <div><CardComponent :cardArray="cardarray" /></div>
 
   <div class="mt-10"></div>
   <div class="mt-10"></div>
   <!-- form component -->
 
   <div>
-    <FormComponent :message="message" :propform="form" />
+    <FormComponent
+      :message="message"
+      :propform="form"
+   
+    />
   </div>
   <div class="mt-10"></div>
   <div class="mt-10"></div>
@@ -54,6 +58,11 @@ export default {
     SliderComponent,
     CardComponent,
     FormComponent,
+  },
+  methods: {
+    getEmitData(value) {
+      console.log(value.name);
+    },
   },
 };
 </script>

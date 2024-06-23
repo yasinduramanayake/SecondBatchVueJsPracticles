@@ -1,7 +1,6 @@
 <template>
   <div class="pa-4">
-
-    
+    {{ test }}
     <v-row>
       <v-col
         lg="4"
@@ -24,14 +23,18 @@
         </v-sheet>
       </v-col>
     </v-row>
+    <v-btn @click="testMethod()">Test</v-btn>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       cardarray: [],
+      dataArray: [],
+      message: "jhgfdsdfdjhg",
     };
   },
 
@@ -39,8 +42,29 @@ export default {
     cardArray: Array,
   },
 
-  created() {
+  computed: {
+    test() {
+      return this.cardarray;
+    },
+  },
+
+  async created() {
     this.cardarray = this.cardArray;
+    await this.getApiData();
+  },
+
+  methods: {
+    async getApiData() {
+      const response = await axios.get("https://reqres.in/api/users");
+      // console.log(response.data);
+      this.dataArray = response.data.data;
+    },
+    testMethod() {
+      this.cardarray.push({
+        key1: 7,
+        key2: 8,
+      });
+    },
   },
 };
 </script>

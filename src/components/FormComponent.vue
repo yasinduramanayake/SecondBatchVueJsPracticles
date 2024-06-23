@@ -55,24 +55,17 @@
       <div class="pa-4" v-else-if="showform === true">No Result</div>
     </v-card>
     <v-dialog v-model="show" max-width="500">
-      <v-card title="Dialog">
-        <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </v-card-text>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn text="Close Dialog" @click="show = false"></v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+      <DialogBoxComponent @closethemodal="closedialog"
+    /></v-dialog>
   </div>
 </template>
 
 <script>
+import DialogBoxComponent from "@/components/DialogComponent.vue";
 export default {
+  components: {
+    DialogBoxComponent,
+  },
   data() {
     return {
       show: false,
@@ -97,9 +90,13 @@ export default {
     testFun() {
       console.log(this.form.name);
       this.show = true;
+      // this.$emit("emitingForm", this.form);
     },
     showForm() {
       this.showform = true;
+    },
+    closedialog(value) {
+      this.show = false;
     },
   },
 };
